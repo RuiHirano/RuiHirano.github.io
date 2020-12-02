@@ -4,9 +4,11 @@ import { ThemeContext } from 'providers/ThemeProvider';
 import { Container, Button } from 'components/common';
 import dev from 'assets/illustrations/skills.svg';
 import { Wrapper, SkillsWrapper, Details, Thumbnail } from './styles';
+import { useIntl } from "react-intl";
 
 export const Skills = () => {
   const { theme } = useContext(ThemeContext);
+  const intl = useIntl()
 
   return (
     <Wrapper id="about">
@@ -15,13 +17,12 @@ export const Skills = () => {
           <img src={dev} alt="I’m John and I’m a Backend & Devops engineer!" />
         </Thumbnail>
         <Details theme={theme}>
-          <h1>More about me</h1>
+          <h1>{intl.formatMessage({ id: "skills_title" })}</h1>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry’s standard dummy.
+            {intl.formatMessage({ id: "skills_description" })}
           </p>
           <Button as={AnchorLink} href="#contact">
-            Hire me
+            {intl.formatMessage({ id: "more_about_me" })}
           </Button>
         </Details>
       </SkillsWrapper>

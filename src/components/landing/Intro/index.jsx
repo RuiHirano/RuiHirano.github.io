@@ -5,23 +5,26 @@ import { Header } from 'components/theme';
 import { Container, Button } from 'components/common';
 import dev from 'assets/illustrations/dev.svg';
 import { Wrapper, IntroWrapper, Details, Thumbnail } from './styles';
+import { useIntl } from "react-intl";
+import { Typography } from "@material-ui/core";
 
 export const Intro = () => {
   const { theme } = useContext(ThemeContext);
+  const intl = useIntl()
 
   return (
     <Wrapper>
       <Header />
       <IntroWrapper as={Container}>
         <Details theme={theme}>
-          <h1>Hi There!</h1>
-          <h4>I’m John and I’m a JAMStack engineer!</h4>
+          <h1>{intl.formatMessage({ id: "intro_title" })}</h1>
+          <h4>{intl.formatMessage({ id: "intro_description" })}</h4>
           <Button as={AnchorLink} href="#contact">
-            Hire me
+            {intl.formatMessage({ id: "more_about_me" })}
           </Button>
         </Details>
         <Thumbnail>
-          <img src={dev} alt="I’m John and I’m a JAMStack engineer!" />
+          <img src={dev} alt="I’m Rui Hirano and I’m a graduate student at Nagoya University in Japan!" />
         </Thumbnail>
       </IntroWrapper>
     </Wrapper>
