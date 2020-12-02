@@ -1,1 +1,0 @@
-# RuiHirano.github.io
