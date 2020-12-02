@@ -5,9 +5,12 @@ import { Container, Card, TitleWrap } from 'components/common';
 import Star from 'components/common/Icons/Star';
 import Fork from 'components/common/Icons/Fork';
 import { Wrapper, Grid, Item, Content, Stats, Languages } from './styles';
+import { Button } from '@material-ui/core';
+import { useIntl } from "react-intl";
 
 export const Projects = () => {
   const { theme } = useContext(ThemeContext);
+  const intl = useIntl()
   const {
     github: {
       viewer: {
@@ -19,7 +22,7 @@ export const Projects = () => {
       {
         github {
           viewer {
-            repositories(first: 8, orderBy: { field: STARGAZERS, direction: DESC }) {
+            repositories(first: 6, orderBy: { field: STARGAZERS, direction: DESC }) {
               edges {
                 node {
                   id
@@ -82,6 +85,13 @@ export const Projects = () => {
           </Item>
         ))}
       </Grid>
+
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ flexGrow: 1 }} />
+        <div>
+          <Button variant="contained" disableElevation size="large" style={{ backgroundColor: "#0074d9", color: "white", marginTop: 20 }}>{intl.formatMessage({ id: "see_more" })}</Button>
+        </div>
+      </div>
     </Wrapper>
   );
 };
