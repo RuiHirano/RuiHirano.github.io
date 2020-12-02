@@ -4,8 +4,8 @@ import React, {
 	useReducer,
 } from 'react'
 
-import ja_JP from './../intl/ja_JP';
-import en_US from './../intl/en_US';
+import ja_JP from '../intl/ja_JP';
+import en_US from '../intl/en_US';
 
 const initialState = {
 	config: {
