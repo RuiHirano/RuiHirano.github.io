@@ -1,24 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, Drawer, IconButton, InputBase, List, ListItem, ListItemText, ListItemIcon, Divider } from "@material-ui/core";
 import { fade, makeStyles } from "@material-ui/core/styles";
+import useSelector, { SelectorData } from '../../hooks/useSelector';
+import { IntlContext } from '../../intl/provider';
 
-const Header: React.FC = () =>{
+const Header: React.FC = () => {
+    const classes = useStyles()
+    const { changeLanguage } = useContext(IntlContext);
+    const { renderSelector } = useSelector(changeSelector)
+    function changeSelector({ label, value }: SelectorData) {
+        console.log("change2", label, value)
+        changeLanguage(value)
+    }
 
-return (
-    <div className={classes.grow}>
-
-            <MainDrawer openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
-            <AppBar position="static" className={classes.app_bar}>
-                <Toolbar>
-                    <Button onClick={toUserHome}>
-                        <Typography className={classes.title} variant="h6" noWrap>
+    return (
+        <div style={{ height: 50 }}>
+            <AppBar variant={"outlined"} position={"absolute"} elevation={0} className={classes.app_bar}>
+                <Toolbar variant="dense">
+                    <Button onClick={() => { }}>
+                        <Typography className={classes.title} noWrap>
                             Rui Hirano
-                        </Typography>
+                    </Typography>
                     </Button>
+                    {renderSelector()}
                 </Toolbar>
             </AppBar>
         </div>
-)
+    )
 }
 export default Header
 
@@ -34,6 +42,6 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     app_bar: {
-        backgroundColor: 'white'
+        backgroundColor: 'white',
     },
 }));

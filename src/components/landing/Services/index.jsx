@@ -7,6 +7,7 @@ import Fork from 'components/common/Icons/Fork';
 import { Wrapper, Grid, Item, Content, Stats, Languages } from './styles';
 import CardMedia from '@material-ui/core/CardMedia';
 import TradingManagerImg from '../../../assets/services/trading_manager.png'
+import Covid19APIImg from '../../../assets/services/covid19_rader_for_japan_api.png'
 import { useIntl } from "react-intl";
 import { Button } from '@material-ui/core';
 
@@ -24,6 +25,12 @@ export const Services = () => {
       description: intl.formatMessage({ id: "trading_manager_description" }),
       url: 'http://ruihirano.info',
       imgsrc: TradingManagerImg,
+    },
+    {
+      name: "Covid19 Rader for Japan API",
+      description: intl.formatMessage({ id: "covid19_rader_for_japan_api_description" }),
+      url: 'https://github.com/RuiHirano/covid19-rader-for-japan-api',
+      imgsrc: Covid19APIImg,
     },
   ]
 
@@ -66,14 +73,12 @@ export const Services = () => {
   console.log("URL", process.env.PUBLIC_URL)
   return (
     <Wrapper as={Container} id="services">
-      <div style={{ display: 'flex' }}>
-        <h2>Services</h2>
-      </div>
-      {services.map((service, index) => {
-        if (index > 6) return
+      <h2>Services</h2>
+      <Grid>
+        {services.map((service, index) => {
+          if (index > 6) return
 
-        return (
-          <Grid>
+          return (
             <Item key={service.name} as="a" href={service.url} target="_blank" rel="noopener noreferrer" theme={theme}>
               <Card theme={theme}>
                 <Content>
@@ -85,9 +90,9 @@ export const Services = () => {
                 </Content>
               </Card>
             </Item>
-          </Grid>
-        )
-      })}
+          )
+        })}
+      </Grid>
 
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <div style={{ flexGrow: 1 }} />

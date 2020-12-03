@@ -8,18 +8,14 @@ import StoreProvider from 'store';
 const Root = () => {
 
   return (
-    <StoreProvider>
-      <IntlProvider>
-        <Layout>
-          <SEO />
-          <Intro />
-          <Projects />
-          <Services />
-          <Skills />
-          <Contact />
-        </Layout>
-      </IntlProvider>
-    </StoreProvider>
+    <Layout>
+      <SEO />
+      <Intro />
+      <Projects />
+      <Services />
+      <Skills />
+      <Contact />
+    </Layout>
   )
 }
 

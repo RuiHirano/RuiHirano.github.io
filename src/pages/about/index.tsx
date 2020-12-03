@@ -5,7 +5,11 @@ import Header from '../components/header'
 const About: React.FC = () => {
     return (
         <div>
-        <Header/>
+            <Header />
+            <Typography>about page</Typography>
+            <Typography>about page</Typography>
+            <Typography>about page</Typography>
+            <Typography>about page</Typography>
             <Typography>about page</Typography>
             <Typography>about page</Typography>
         </div>

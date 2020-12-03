@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppProvider } from './app'
 
-const StoreProvider = ({ children }) => {
+const StoreProvider: React.FC<{}> = ({ children }) => {
 
 	return (
 		<AppProvider>
