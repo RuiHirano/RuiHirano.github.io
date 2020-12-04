@@ -6,7 +6,7 @@ export type SelectorData = { label: string, value: LocaleType }
 
 const useSelector = (changeValue: (data: SelectorData) => void) => {
 
-    const mock_data: SelectorData[] = [{ label: "日本語", value: "ja" }, { label: "Engilish", value: "en" }]
+    const mock_data: SelectorData[] = [{ label: "Engilish", value: "en" }, { label: "日本語", value: "ja" }]
 
     const [status, setStatus] = useState(mock_data[0]);
 

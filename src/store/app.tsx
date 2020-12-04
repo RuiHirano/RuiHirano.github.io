@@ -32,8 +32,8 @@ type AppState = typeof initialState
 
 const initialState = {
 	config: {
-		locale: "ja",
-		messages: ja_JP
+		locale: "en",
+		messages: en_US
 	} as IntlConfig
 }
 
