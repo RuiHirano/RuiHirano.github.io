@@ -5,6 +5,7 @@ import { Container, Button } from 'components/common';
 import dev from 'assets/illustrations/skills.svg';
 import { Wrapper, SkillsWrapper, Details, Thumbnail } from './styles';
 import { useIntl } from "react-intl";
+import { Link } from "gatsby"
 
 export const Skills = () => {
   const { theme } = useContext(ThemeContext);
@@ -21,9 +22,11 @@ export const Skills = () => {
           <p>
             {intl.formatMessage({ id: "skills_description" })}
           </p>
-          <Button as={AnchorLink} href="#contact">
-            {intl.formatMessage({ id: "more_about_me" })}
-          </Button>
+          <Link to="/about/">
+            <Button>
+              {intl.formatMessage({ id: "more_about_me" })}
+            </Button>
+          </Link>
         </Details>
       </SkillsWrapper>
     </Wrapper>

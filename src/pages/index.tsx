@@ -3,7 +3,7 @@ import { Layout, SEO } from 'components/common';
 import { Intro, Skills, Contact, Projects, Services } from 'components/landing';
 
 
-const Root = () => {
+const Root: React.FC = () => {
 
   return (
     <Layout>

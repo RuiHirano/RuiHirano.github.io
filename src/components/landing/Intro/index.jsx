@@ -7,6 +7,7 @@ import dev from 'assets/illustrations/dev.svg';
 import { Wrapper, IntroWrapper, Details, Thumbnail } from './styles';
 import { useIntl } from "react-intl";
 import { Typography } from "@material-ui/core";
+import { Link } from "gatsby"
 
 export const Intro = () => {
   const { theme } = useContext(ThemeContext);
@@ -19,9 +20,11 @@ export const Intro = () => {
         <Details theme={theme}>
           <h1>{intl.formatMessage({ id: "intro_title" })}</h1>
           <h4>{intl.formatMessage({ id: "intro_description" })}</h4>
-          <Button as={AnchorLink} href="#contact">
-            {intl.formatMessage({ id: "more_about_me" })}
-          </Button>
+          <Link to="/about/">
+            <Button>
+              {intl.formatMessage({ id: "more_about_me" })}
+            </Button>
+          </Link>
         </Details>
         <Thumbnail>
           <img src={dev} alt="I’m Rui Hirano and I’m a graduate student at Nagoya University in Japan!" />

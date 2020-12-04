@@ -17,7 +17,7 @@ export const Intro = () => {
       <Header />
       <IntroWrapper as={Container}>
         <Details theme={theme}>
-          <h1>{intl.formatMessage({ id: "intro_title" })}</h1>
+          <h1>{"About"}</h1>
           <h4>{intl.formatMessage({ id: "intro_description" })}</h4>
           <Button as={AnchorLink} href="#contact">
             {intl.formatMessage({ id: "more_about_me" })}

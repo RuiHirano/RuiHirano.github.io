@@ -10,6 +10,7 @@ import TradingManagerImg from '../../../assets/services/trading_manager.png'
 import Covid19APIImg from '../../../assets/services/covid19_rader_for_japan_api.png'
 import { useIntl } from "react-intl";
 import { Button } from '@material-ui/core';
+import { Link } from "gatsby"
 
 const mockImageUrl = 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg'
 
@@ -97,7 +98,11 @@ export const Services = () => {
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <div style={{ flexGrow: 1 }} />
         <div>
-          <Button variant="contained" disableElevation size="large" style={{ backgroundColor: "#0074d9", color: "white", marginTop: 20 }}>{intl.formatMessage({ id: "see_more" })}</Button>
+          <Link to="/services/">
+            <Button variant="contained" disableElevation size="large" style={{ backgroundColor: "#0074d9", color: "white", marginTop: 20 }}>
+              {intl.formatMessage({ id: "see_more" })}
+            </Button>
+          </Link>
         </div>
       </div>
     </Wrapper>

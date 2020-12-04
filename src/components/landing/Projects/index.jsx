@@ -7,6 +7,7 @@ import Fork from 'components/common/Icons/Fork';
 import { Wrapper, Grid, Item, Content, Stats, Languages } from './styles';
 import { Button } from '@material-ui/core';
 import { useIntl } from "react-intl";
+import { Link } from "gatsby"
 
 export const Projects = () => {
   const { theme } = useContext(ThemeContext);
@@ -89,7 +90,11 @@ export const Projects = () => {
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <div style={{ flexGrow: 1 }} />
         <div>
-          <Button variant="contained" disableElevation size="large" style={{ backgroundColor: "#0074d9", color: "white", marginTop: 20 }}>{intl.formatMessage({ id: "see_more" })}</Button>
+          <Link to="/projects/">
+            <Button variant="contained" disableElevation size="large" style={{ backgroundColor: "#0074d9", color: "white", marginTop: 20 }}>
+              {intl.formatMessage({ id: "see_more" })}
+            </Button>
+          </Link>
         </div>
       </div>
     </Wrapper>
