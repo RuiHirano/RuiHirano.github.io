@@ -1,31 +1,80 @@
 import React, { useContext } from 'react';
-import { Typography } from '@material-ui/core';
 import { Layout, SEO } from 'components/common';
 import { Header } from 'components/theme';
-import { Grid } from '@material-ui/core';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Typography, Card, CardContent, Grid } from '@material-ui/core';
+import { styled } from '@material-ui/core/styles';
 
-const Wrapper: React.FC = ({ children }) => {
-    return (
-        <div style={{ paddingLeft: "15%", paddingRight: "15%" }}>
-            {children}
-        </div>
-    )
-}
+const Wrapper = styled('div')({
+    paddingLeft: "15%",
+    paddingRight: "15%"
+});
 
-const Title: React.FC = () => {
-    return (
-        <Typography style={{ fontSize: 30, fontWeight: 'bold' }}>Projects</Typography>
-    )
-}
+const Title = styled(Typography)({
+    fontSize: 30,
+    fontWeight: 'bold',
+    paddingTop: 10,
+    paddingBottom: 10
+});
 
 const GitHubProjects: React.FC = () => {
+
+    const {
+        github: {
+            viewer: {
+                repositories: { edges },
+            },
+        },
+    } = useStaticQuery(
+        graphql`
+          {
+            github {
+              viewer {
+                repositories(first: 6, orderBy: { field: STARGAZERS, direction: DESC }) {
+                  edges {
+                    node {
+                      id
+                      name
+                      url
+                      description
+                      stargazers {
+                        totalCount
+                      }
+                      forkCount
+                      languages(first: 3) {
+                        nodes {
+                          id,
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `
+    );
+    console.log("asd", edges)
+
+    const content = edges.map(({ node }: any) => {
+        return (
+            <Grid item xl={4} lg={4} md={4} sm={12} xs={12}>
+                <Card style={{ height: 200 }}>
+                    <CardContent>
+                        <h4>{node.name}</h4>
+                        <p>{node.description}</p>
+                    </CardContent>
+                </Card>
+            </Grid>
+        )
+    })
     return (
-        <Grid container style={{ padding: 30 }}>
+        <Grid container spacing={5} style={{ paddingTop: 30 }}>
             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-                <Typography style={{ fontSize: 30, fontWeight: 'bold' }}>GitHub</Typography>
+                <Title>Github</Title>
             </Grid>
-            <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-            </Grid>
+            {content}
         </Grid>
     )
 }
@@ -36,7 +85,7 @@ const Projects: React.FC = () => {
             <SEO title="Projects" description="" location="/projects" />
             <Header />
             <Wrapper>
-                <Title />
+                <Title >Projects</Title>
                 <GitHubProjects />
             </Wrapper>
         </Layout>

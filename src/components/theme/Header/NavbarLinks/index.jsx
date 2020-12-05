@@ -14,7 +14,7 @@ const NavbarLinks = ({ desktop }) => {
       <Link to="/publications">Publications</Link>
       <Link to="/projects">Projects</Link>
       <Link to="/services">Services</Link>
-      <Link to="/">Contact</Link>
+      <Link to="/contact">Contact</Link>
       <ToggleTheme />
     </Wrapper>
   )

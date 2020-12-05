@@ -8,10 +8,12 @@ export const Layout = ({ children }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <>
+    <div style={{ display: "flex", flexFlow: 'column', minHeight: "100vh" }}>
       <Global theme={theme} />
-      {children}
+      <div style={{ flex: 1 }}>
+        {children}
+      </div>
       <Footer />
-    </>
+    </div>
   );
 };

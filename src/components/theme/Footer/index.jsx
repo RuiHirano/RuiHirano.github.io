@@ -4,7 +4,7 @@ import { Wrapper, Flex, Links, Details } from './styles';
 import social from './social.json';
 
 export const Footer = () => (
-  <Wrapper>
+  <Wrapper >
     <Flex as={Container}>
       <Details>
         <h2>Rui Hirano</h2>
