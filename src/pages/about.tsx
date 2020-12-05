@@ -16,7 +16,7 @@ const Wrapper: React.FC = ({ children }) => {
 
 const Title: React.FC = () => {
     return (
-        <Typography style={{ fontSize: 30, fontWeight: 'bold' }}>about</Typography>
+        <Typography style={{ fontSize: 30, fontWeight: 'bold' }}>About</Typography>
     )
 }
 
@@ -38,6 +38,37 @@ const Profile: React.FC = () => {
     )
 }
 
+const Biography: React.FC = () => {
+    return (
+        <Grid container style={{ padding: 30 }}>
+            <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                <Typography style={{ fontSize: 30, fontWeight: 'bold' }}>Biography</Typography>
+            </Grid>
+            <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                <Typography style={{ fontSize: 20, whiteSpace: "pre-wrap" }}>{"2015年3月　愛知県立刈谷北高等学校　卒業"}</Typography>
+                <Typography style={{ fontSize: 20, whiteSpace: "pre-wrap" }}>{"2019年3月　国立法人名古屋大学工学部電気電子情報工学科　卒業"}</Typography>
+                <Typography style={{ fontSize: 20, whiteSpace: "pre-wrap" }}>{"2019年4月　名古屋大学大学院工学研究科 情報通信工学専攻 修士課程 (現在)"}</Typography>
+                <Typography style={{ fontSize: 20, whiteSpace: "pre-wrap" }}>{"2019年4月　未来エレクトロニクス創成加速DII協働大学院プログラム 二期生 (現在)"}</Typography>
+            </Grid>
+        </Grid>
+    )
+}
+
+const Skills: React.FC = () => {
+    return (
+        <Grid container style={{ padding: 30 }}>
+            <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                <Typography style={{ fontSize: 30, fontWeight: 'bold' }}>Skills</Typography>
+            </Grid>
+            <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                <Typography style={{ fontSize: 20, whiteSpace: "pre-wrap" }}>{"プログラミング: Go, Python, Javascript, Typescript, React, React Native"}</Typography>
+                <Typography style={{ fontSize: 20, whiteSpace: "pre-wrap" }}>{"ホットワード: シミュレーション、デザインパターン, マイクロアーキテクチャ, TDD, Deep Learning"}</Typography>
+                <Typography style={{ fontSize: 20, whiteSpace: "pre-wrap" }}>{"趣味: ソフトテニス, プログラミング, ギター, 映画観賞, お笑い, 酒"}</Typography>
+            </Grid>
+        </Grid>
+    )
+}
+
 const About: React.FC = () => {
     return (
         <Layout>
@@ -46,6 +77,8 @@ const About: React.FC = () => {
             <Wrapper>
                 <Title />
                 <Profile />
+                <Biography />
+                <Skills />
             </Wrapper>
         </Layout>
     )
