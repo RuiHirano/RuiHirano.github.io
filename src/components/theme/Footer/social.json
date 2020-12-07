@@ -3,7 +3,7 @@
     "id": 0,
     "name": "Qiita",
     "link": "https://qiita.com/rui0930",
-    "icon": "/icons/telegram.svg"
+    "icon": "/icons/qiita.svg"
   },
   {
     "id": 1,
@@ -12,9 +12,15 @@
     "icon": "/icons/github.svg"
   },
   {
-    "id": 3,
+    "id": 2,
     "name": "Twitter",
     "link": "https://twitter.com/rui_hirano_0930",
     "icon": "/icons/twitter.svg"
+  },
+  {
+    "id": 3,
+    "name": "Facebook",
+    "link": "https://facebook.com/ruihirano0930",
+    "icon": "/icons/facebook.svg"
   }
 ]
