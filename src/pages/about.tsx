@@ -80,6 +80,10 @@ const News: React.FC = () => {
 
     const newsData = [
         {
+            date: "2020年12月",
+            title: "Aichi Startup ビジネスプランコンテストで奨励賞を受賞しました。"
+        },
+        {
             date: "2020年11月",
             title: "Aichi Startup ビジネスプランコンテストの出場者に選ばれました。"
         },

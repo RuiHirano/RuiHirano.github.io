@@ -24,7 +24,7 @@ export const Services = () => {
     {
       name: "Trading Manager",
       description: intl.formatMessage({ id: "trading_manager_description" }),
-      url: 'http://ruihirano.info',
+      url: 'https://play.google.com/store/apps/details?id=com.felixport0803.tradingmanager',
       imgsrc: TradingManagerImg,
     },
     {
