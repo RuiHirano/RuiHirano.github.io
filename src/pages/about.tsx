@@ -46,6 +46,7 @@ const Biography: React.FC = () => {
         intl.formatMessage({ id: "bio_data2" }),
         intl.formatMessage({ id: "bio_data3" }),
         intl.formatMessage({ id: "bio_data4" }),
+        intl.formatMessage({ id: "bio_data5" }),
     ]
     return (
         <Grid container style={{ padding: 30 }}>
@@ -79,6 +80,18 @@ const Skills: React.FC = () => {
 const News: React.FC = () => {
 
     const newsData = [
+        {
+            date: "2020年4月",
+            title: "DTechが愛知県Station Ai事業に採択されました。"
+        },
+        {
+            date: "2020年4月",
+            title: "名古屋大学大学院工学研究科情報通信工学専攻(博士課程)に入学しました。"
+        },
+        {
+            date: "2020年3月",
+            title: "Aichi Startup ビジネスプランコンテスト成果発表会で事業プレゼンをしました。"
+        },
         {
             date: "2020年12月",
             title: "Aichi Startup ビジネスプランコンテストで奨励賞を受賞しました。"
