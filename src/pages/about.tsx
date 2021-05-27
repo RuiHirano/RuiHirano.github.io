@@ -47,6 +47,7 @@ const Biography: React.FC = () => {
         intl.formatMessage({ id: "bio_data3" }),
         intl.formatMessage({ id: "bio_data4" }),
         intl.formatMessage({ id: "bio_data5" }),
+        intl.formatMessage({ id: "bio_data6" }),
     ]
     return (
         <Grid container style={{ padding: 30 }}>

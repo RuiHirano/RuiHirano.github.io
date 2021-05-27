@@ -15,7 +15,7 @@ const en_US = {
     bio_data2: "2019/03　Graduated from the Department of Electrical, Electronic and Information Engineering, Faculty of Engineering, Nagoya University",
     bio_data3: "2019/04　Master's Program, Department of Information and Communication Engineering, Graduate School of Engineering, Nagoya University",
     bio_data4: "2019/04　Future Electronics Creation Acceleration DII Collaborative Graduate Program, Second Generation (Present)",
-    bio_data3: "2019/04　Graduated from Master's Program, Department of Information and Communication Engineering, Graduate School of Engineering, Nagoya University",
-    bio_data5: "2019/04　Doctor's Program, Department of Information and Communication Engineering, Graduate School of Engineering, Nagoya University (Present)"
+    bio_data5: "2019/04　Graduated from Master's Program, Department of Information and Communication Engineering, Graduate School of Engineering, Nagoya University",
+    bio_data6: "2019/04　Doctor's Program, Department of Information and Communication Engineering, Graduate School of Engineering, Nagoya University (Present)"
 }
 export default en_US;
